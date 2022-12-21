@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance Charges Prediction</title>
+    
+
+    <style>
+        body
+            {
+                background-image: url("https://www.cerner.com/-/media/cerner-media-united-states/blog-images/blog_machine-learning-2.jpg?vs=1");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                /* background-color:#ffffff; */
+            }
+    </style>
+
+</head>
+
+
+
+<center><body>
+            
+    <h1> Medical Insurance Predictior </h1>
+    <form method="POST" action="/predict_charges">
+
+        <p><label><h3>Age:</h3></label>
+        <input type = "number" name = "age", min="18" max="65", step="any", required> 
+        <p>Fill Values Between 18 to 65
+        </select>
+
+        <br>
+
+        <label><h3>Gender:</h3></label>
+        <select name = "gender">
+            <option value = "male">Male</option>
+            <option value = "female">Female</option> 
+        </select>
+        <p>Please mention gender
+
+        <br>
+
+        <p><label><h3>BMI:</h3></label></p>
+        <input type = "number" name = "bmi", min="15" max="55", required>
+        <p>Fill Values Between 15 to 55
+        </select>
+
+        <br>
+
+        <p><label><h3>Children:</h3></label></p>
+        <input type = "number" name = "children", min="0", max="5",required>
+        <p>Fill Values Between 0 to 5
+        </select>
+
+        <br>
+
+        <label><h3>Smoker:</h3></label>
+        <label>Yes:</label> <input type = "radio" name= "smoker" value = "yes">
+        <label>No:</label> <input type = "radio" name= "smoker" value = "no">
+        <p>Select either Yes or No
+        <br>
+
+        <label><h3>Region:</h3></label>
+        <select name = "region">
+            <option value = "northeast">Northeast</option>
+            <option value = "southeast">Southeast</option>
+            <option value = "northwest">Northwest</option>
+            <option value = "southwest">Southwest</option>
+        </select>
+        <p>Select one region
+        <br>
+        <br>
+
+        <input type = "submit" value="SUBMIT">
+
+        <br>
+
+        <p><h2> Your insurance premium charges will be <b> {{ prediction }} /- Rs.</b> Only </h2></p>
+
+
+    </form>
+
+</body></center>
+</html>
